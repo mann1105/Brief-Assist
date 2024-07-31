@@ -25,28 +25,31 @@ The required Python packages can be installed using pip:
 pip install pynput pyperclip httpx
 ```
 
-Usage**
-1) Start the script by running:
-   - python summarize.py
+## Usage
 
-2) Using Hotkeys
+1. **Start the Script**:
+   ```bash
+   python summarize.py
+   ```
+
+2. **Using Hotkeys
    - F9 Key: Summarizes the current line.
    - F10 Key: Summarizes the selected text.
 When a hotkey is pressed, the script performs the following actions:
 
-F9 Key:
+**F9 Key:
 Selects the entire current line.
 Copies the selected text to the clipboard.
 Sends the text to the Ollama server for summarization/grammar correction based on your requirement.
 Replaces the original text with the updated version.
 
-F10 Key:
+**F10 Key:
 Copies the selected text to the clipboard.
 Sends the text to the Ollama server for summarization.
 Replaces the original text with the summarized version.
 
 **Notes**
-Ensure that the Ollama server is running and accessible at the specified endpoint.
-The project uses the pynput library for capturing global hotkeys and pyperclip for clipboard operations.
-You may need to modify the hotkey bindings depending on your system and keyboard layout. 
-Specifically for MAC system with ventura or later version you need to first disable your default input of F9 and F10 keys. Follow this link to diable https://support.apple.com/en-in/102439
+- Ensure that the Ollama server is running and accessible at the specified endpoint.
+- The project uses the pynput library for capturing global hotkeys and pyperclip for clipboard operations.
+- You may need to modify the hotkey bindings depending on your system and keyboard layout. 
+- Specifically for MAC system with ventura or later version you need to first disable your default input of F9 and F10 keys. Follow this link to diable https://support.apple.com/en-in/102439
