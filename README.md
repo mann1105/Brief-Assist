@@ -1,26 +1,31 @@
-****Brief-Assist****
+# Brief-Assist
 
+Brief-Assist provides functionality to summarize or correct grammar of selected text using the `mistral:7b-instruct-v0.2-q3_K_L` model hosted locally via Ollama. The project includes hotkey functionality to streamline text selection and summarization in any application. Possible use cases include summarization, grammar correction, sentence translation, and language translation (subject to LLM capabilities).
 
-This project provides functionality to summarize or correct grammer of selected text using the mistral:7b-instruct-v0.2-q3_K_L model hosted locally via Ollama. 
-The project includes hotkey functionality to streamline text selection and summarization in any application. 
-There are many possibities of how you can use these project, some of the examples are summarization, grammar correction, sentence translation, language translation(subject to LLM).
+## Prerequisites
 
-**Prerequisites**
-Python 3.7+
-Ollama Server: The main.py expects an Ollama server to be running locally on http://localhost:11434.
+- **Python 3.7+**
+- **Ollama Server**: The `main.py` expects an Ollama server to be running locally on `http://localhost:11434`.
 
-**Ollama Setup**
-1) Installing Ollama
-   - Follow the installation instructions from the official Ollama documentation for you PC.
-2) Start Ollama Server
-   - Run the Ollama server locally to listen on the specified endpoint (http://localhost:11434).
+### Ollama Setup
 
-**Installation**
+#### Installing Ollama
+Follow the installation instructions from the [official Ollama documentation](https://ollama.ai/docs/getting-started) for your PC.
 
-**Install Dependencies**
-1) The required Python packages can be installed using pip: pip install pynput pyperclip httpx
+#### Start Ollama Server
+Run the Ollama server locally to listen on the specified endpoint (`http://localhost:11434`).
 
-**Usage**
+## Installation
+
+### Install Dependencies
+
+The required Python packages can be installed using pip:
+
+```bash
+pip install pynput pyperclip httpx
+```
+
+Usage**
 1) Start the script by running:
    - python summarize.py
 
