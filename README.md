@@ -32,18 +32,18 @@ pip install pynput pyperclip httpx
    python summarize.py
    ```
 
-2. **Using Hotkeys
+2. **Using Hotkeys**
    - F9 Key: Summarizes the current line.
    - F10 Key: Summarizes the selected text.
 When a hotkey is pressed, the script performs the following actions:
 
-**F9 Key:
+**F9 Key**:
 Selects the entire current line.
 Copies the selected text to the clipboard.
 Sends the text to the Ollama server for summarization/grammar correction based on your requirement.
 Replaces the original text with the updated version.
 
-**F10 Key:
+**F10 Key**:
 Copies the selected text to the clipboard.
 Sends the text to the Ollama server for summarization.
 Replaces the original text with the summarized version.
