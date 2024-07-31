@@ -1,4 +1,6 @@
 ****Brief-Assist****
+
+
 This project provides functionality to summarize or correct grammer of selected text using the mistral:7b-instruct-v0.2-q3_K_L model hosted locally via Ollama. 
 The project includes hotkey functionality to streamline text selection and summarization in any application. 
 There are many possibities of how you can use these project, some of the examples are summarization, grammar correction, sentence translation, language translation(subject to LLM).
