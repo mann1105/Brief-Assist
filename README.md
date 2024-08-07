@@ -86,6 +86,9 @@ print(Key.f9.value, Key.f10.value)</code></pre>
   <li>Configure API settings in the project.</li>
   <li>Select the text and press F9 to process using the API.</li>
 </ol>
+<h3>Considerations</h3>
+<p>You may need to modify the hotkey bindings depending on your system and keyboard layout.</p>
+<p>Specifically for MAC system with ventura or later version you need to first disable your default input of F9 and F10 keys. Follow this link to diable https://support.apple.com/en-in/102439</p>
 
 <h2 id="contributing">🤝 Contributing</h2>
 
