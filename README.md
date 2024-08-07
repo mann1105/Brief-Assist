@@ -52,7 +52,7 @@
   <li>Clone the repository:
     <pre><code>git clone https://github.com/mann1105/Brief-Assist.git
 cd Brief-Assist</code></pre>
-    <p>There are two folders namely local_assistant which requires inference from LLM locally and remote_assistant which uses api to make inference. Just an advice, using remote_assistant folder files will give faster results as compared to local_assistant files</p>
+    <p>There are two folders namely local_assistant which requires inference from LLM locally and remote_assistant which uses api to make inference. Just an advice, use remote_assistant folder files to get faster responses as compared to local_assistant files</p>
   </li>
   <li>Create and activate a virtual environment:
     <pre><code>python -m venv venv
@@ -88,6 +88,7 @@ print(Key.f9.value, Key.f10.value)</code></pre>
   <li>Select the text and press F9 to process using the API.</li>
 </ol>
 <h3>Considerations</h3>
+<p>The python files in any of the folder can be used directly without any modification on MACBOOK's.</p>
 <p>You may need to modify the hotkey bindings depending on your system and keyboard layout.</p>
 <p>Specifically for MAC system with ventura or later version you need to first disable your default input of F9 and F10 keys. Follow this link to diable https://support.apple.com/en-in/102439</p>
 
