@@ -52,6 +52,7 @@
   <li>Clone the repository:
     <pre><code>git clone https://github.com/mann1105/Brief-Assist.git
 cd Brief-Assist</code></pre>
+    <p>There are two folders namely local_assistant which requires inference from LLM locally and remote_assistant which uses api to make inference. Just an advice, using remote_assistant folder files will give faster results as compared to local_assistant files</p>
   </li>
   <li>Create and activate a virtual environment:
     <pre><code>python -m venv venv
