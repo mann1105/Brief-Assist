@@ -1,55 +1,108 @@
-# Brief-Assist
+<h1 align="center">Brief Assist</h1>
 
-Brief-Assist provides functionality to summarize or correct grammar of selected text using the `mistral:7b-instruct-v0.2-q3_K_L` model hosted locally via Ollama. The project includes hotkey functionality to streamline text selection and summarization in any application. Possible use cases include summarization, grammar correction, sentence translation, and language translation (subject to LLM capabilities).
+<p align="center">
+  <img src="https://your-logo-url-here.com" alt="Brief Assist Logo" width="200">
+</p>
 
-## Prerequisites
+<p align="center">
+  Enhancing the power of large language models for everyday tasks
+</p>
 
-- **Python 3.7+**
-- **Ollama Server**: The `main.py` expects an Ollama server to be running locally on `http://localhost:11434`.
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="#contact">Contact</a>
+</p>
 
-### Ollama Setup
+<hr>
 
-#### Installing Ollama
-Follow the installation instructions from the [official Ollama documentation](https://ollama.ai/docs/getting-started) for your PC.
+<h2 id="features">✨ Features</h2>
 
-#### Start Ollama Server
-Run the Ollama server locally to listen on the specified endpoint (`http://localhost:11434`).
+<ul>
+  <li>Text Summarization</li>
+  <li>Grammar Correction</li>
+  <li>Code Refinement</li>
+  <li>Translation</li>
+  <li>Normal Conversation</li>
+</ul>
 
-## Installation
+<h2 id="installation">🚀 Installation</h2>
 
-### Install Dependencies
+<h3>Prerequisites</h3>
 
-The required Python packages can be installed using pip:
+<ul>
+  <li>Python 3.7 or higher</li>
+  <li>Ollama (for local processing)</li>
+  <li>API keys for Gemini, Anthropic, or OpenAI (if using API approach)</li>
+</ul>
 
-```bash
-pip install pynput pyperclip httpx
-```
+<h3>Required Libraries</h3>
 
-## Usage
+<ul>
+  <li><code>pynput</code></li>
+  <li><code>pyperclip</code></li>
+  <li><code>httpx</code></li>
+  <li><code>langchain</code></li>
+  <li><code>langchain-community</code></li>
+  <li><code>langchain_google_genai</code></li>
+</ul>
 
-1. **Start the Script**:
-   ```bash
-   python summarize.py
-   ```
+<h3>Installation Steps</h3>
 
-2. **Using Hotkeys**
-   - F9 Key: Summarizes the current line.
-   - F10 Key: Summarizes the selected text.
-When a hotkey is pressed, the script performs the following actions:
+<ol>
+  <li>Clone the repository:
+    <pre><code>git clone https://github.com/mann1105/Brief-Assist.git
+cd Brief-Assist</code></pre>
+  </li>
+  <li>Create and activate a virtual environment:
+    <pre><code>python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate</code></pre>
+  </li>
+  <li>Install the required libraries:
+    <pre><code>pip install -r requirements.txt</code></pre>
+  </li>
+  <li>Set up Ollama for local processing:
+    <p>Follow the installation instructions from the <a href="https://ollama.ai/docs/getting-started">official Ollama documentation</a> for your PC.</p>
+  </li>
+  <li>Find the Global Hotkey for F9 and F10:
+    <pre><code>from pynput.keyboard import Key
+print(Key.f9.value, Key.f10.value)</code></pre>
+  </li>
+</ol>
 
-**F9 Key**:
-Selects the entire current line.
-Copies the selected text to the clipboard.
-Sends the text to the Ollama server for summarization/grammar correction based on your requirement.
-Replaces the original text with the updated version.
+<h2 id="usage">💻 Usage</h2>
 
-**F10 Key**:
-Copies the selected text to the clipboard.
-Sends the text to the Ollama server for summarization.
-Replaces the original text with the summarized version.
+<h3>Local Processing</h3>
 
-**Notes**
-- Ensure that the Ollama server is running and accessible at the specified endpoint.
-- The project uses the pynput library for capturing global hotkeys and pyperclip for clipboard operations.
-- You may need to modify the hotkey bindings depending on your system and keyboard layout. 
-- Specifically for MAC system with ventura or later version you need to first disable your default input of F9 and F10 keys. Follow this link to diable https://support.apple.com/en-in/102439
+<ol>
+  <li>Select the text you want to process.</li>
+  <li>Press F9 to process the selected text locally. The text will be replaced within a few seconds.</li>
+</ol>
+
+<h3>API Processing</h3>
+
+<ol>
+  <li>Set Up API Keys: Obtain API keys for Gemini, Anthropic, or OpenAI and store them in a <code>.env</code> file.</li>
+  <li>Configure API settings in the project.</li>
+  <li>Select the text and press F9 to process using the API.</li>
+</ol>
+
+<h2 id="contributing">🤝 Contributing</h2>
+
+<p>Contributions are welcome! Please create a pull request or raise an issue for any bugs or feature requests.</p>
+
+<p>See <code>contributing.md</code> for ways to get started.</p>
+
+<p>Please adhere to this project's <code>code of conduct</code>.</p>
+
+<h2 id="contact">📫 Contact</h2>
+
+<p>For any queries, please contact <a href="mailto:manpatel.tech@gmail.com">manpatel.tech@gmail.com</a>.</p>
+
+<hr>
+
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/mann1105">Mann Patel</a>
+</p>
