@@ -1,3 +1,7 @@
 pynput
 pyperclip
 httpx
+langchain
+langchain-community
+langchain_google_genai
+python-dotenv
