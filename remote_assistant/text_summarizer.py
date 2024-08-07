@@ -16,7 +16,7 @@ load_dotenv()
 controller = Controller()
 model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 
-# Prompt Templates, Uncomment the one you want to. However, 3rd one is my personal favourite.
+# Prompt Templates, Uncomment the one you want to. 
 
 # 1. Concise Summary
 # template = """Text: {text}
