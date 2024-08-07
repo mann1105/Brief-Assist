@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  Enhancing the power of large language models for everyday tasks. Generative AI has made our life lot easier, this project will make it more easier.
+  Enhancing the power of large language models for everyday tasks. Generative AI has already streamlined numerous aspects of our daily tasks, and this project takes that convenience to the next level, making tasks faster and easier.
 </p>
 
 <p align="center">
