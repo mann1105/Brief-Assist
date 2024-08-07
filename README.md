@@ -1,8 +1,5 @@
 <h1 align="center">Brief Assist</h1>
 
-<p align="center">
-  <img src="https://your-logo-url-here.com" alt="Brief Assist Logo" width="200">
-</p>
 
 <p align="center">
   Enhancing the power of large language models for everyday tasks
