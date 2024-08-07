@@ -16,8 +16,6 @@ load_dotenv()
 controller = Controller()
 model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 
-# Prompt Templates, Uncomment the one you want to. However, 3rd one is my personal favourite.
-
 # 1. Direct Correction
 template = """Code: {text}
 
