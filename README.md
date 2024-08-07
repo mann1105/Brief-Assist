@@ -65,6 +65,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate</code></pre>
   </li>
   <li>Set up Ollama for local processing:
     <p>Follow the installation instructions from the <a href="https://ollama.ai/docs/getting-started">official Ollama documentation</a> for your PC.</p>
+    <p>Install your desired LLM based on your application like for code_refiner.py you can use codellama</p>
   </li>
   <li>Find the Global Hotkey for F9 and F10:
     <pre><code>from pynput.keyboard import Key
@@ -74,7 +75,7 @@ print(Key.f9.value, Key.f10.value)</code></pre>
 
 <h2 id="usage">💻 Usage</h2>
 
-<h3>Local Processing</h3>
+<h3>Local Processing using Ollama</h3>
 
 <ol>
   <li>Select the text you want to process.</li>
