@@ -34,6 +34,7 @@ model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 #     """
 
 # 3. Abstract Generation (Academic/Research)
+
 template = """Text: {text}
     
     Instructions:
