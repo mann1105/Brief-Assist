@@ -77,7 +77,8 @@ print(Key.f9.value, Key.f10.value)</code></pre>
 
 <ol>
   <li>Select the text you want to process.</li>
-  <li>Press F9 to process the selected text locally. The text will be replaced within a few seconds.</li>
+  <li>Press F9 to process the selected text locally.</li>
+  <li>The request is sent to Ollama via an HTTP POST method on port 11434, which the Ollama API is configured to listen on.</li>
 </ol>
 
 <h3>API Processing</h3>
