@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "Text Summarizer",
+    "version": "1.0",
+    "description": "A tool for summarizing text on web pages.",
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+      "activeTab",
+      "clipboardWrite",
+      "notifications"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "commands": {
+      "fix-current-line": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+L"
+        },
+        "description": "Fix current line"
+      },
+      "fix-selection": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+S"
+        },
+        "description": "Fix selected text"
+      }
+    }
+  }
+  

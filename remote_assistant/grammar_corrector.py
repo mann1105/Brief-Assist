@@ -1,12 +1,9 @@
 from pynput import keyboard
 from pynput.keyboard import Key, Controller
-
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import ChatPromptTemplate
-
 from dotenv import load_dotenv
 from string import Template
-
 import pyperclip
 import time
 import httpx
@@ -18,13 +15,13 @@ model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 # Prompt Templates, Uncomment the one you want to. However, 3rd one is my personal favourite.
 
 # 1. Direct Correction
-# template = """Text: {text}
-#     Instructions: 
-#     1. Proofread the text for grammatical errors, including spelling, punctuation, and sentence structure.
-#     2. Correct any identified errors.
-#     3. Rewrite the corrected text below, maintaining the original meaning and intent as closely as possible.
-#     4. In Response you need to provide JUST corrected paragraph so that I can replace it directly.
-#     """
+template = """Text: {text}
+    Instructions: 
+    1. Proofread the text for grammatical errors, including spelling, punctuation, and sentence structure.
+    2. Correct any identified errors.
+    3. Rewrite the corrected text below, maintaining the original meaning and intent as closely as possible.
+    4. In Response you need to provide JUST corrected paragraph so that I can replace it directly.
+    """
 
 # 2.  Style and Tone Enhancement
 # template = """Text: {text}
@@ -43,20 +40,20 @@ model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 # Domain:           [Academic, Business, Technical, Creative, Legal, Medical]
 
 # MODIFY based on the work you are performing
-template = """Text: {text}
+# template = """Text: {text}
     
-    Type of document: Email
-    Intended audience: Colleagues
-    Desired tone: Formal and Objective
-    Domain or field: Business
+#     Type of document: Email
+#     Intended audience: Colleagues
+#     Desired tone: Formal and Objective
+#     Domain or field: Business
     
-    Instructions:
-    1. Proofread the text for any grammatical errors (spelling, punctuation, grammar).
-    2. Consider the document details and tailor corrections to align with the intended type, audience, tone and domain.
-    3. Ensure the corrected text is clear, concise, and effective in achieving its purpose.
-    4. Follow the format required in specific documents like in email start with Dear ... as per the context of the paragraph and end with appropriate ending like Thank you/ yours sciencerly.
-    5. In Response you need to provide JUST corrected paragraph so that I can replace it directly.
-    """
+#     Instructions:
+#     1. Proofread the text for any grammatical errors (spelling, punctuation, grammar).
+#     2. Consider the document details and tailor corrections to align with the intended type, audience, tone and domain.
+#     3. Ensure the corrected text is clear, concise, and effective in achieving its purpose.
+#     4. Follow the format required in specific documents like in email start with Dear ... as per the context of the paragraph and end with appropriate ending like Thank you/ yours sciencerly.
+#     5. In Response you need to provide JUST corrected paragraph so that I can replace it directly.
+#     """
 prompt_template = ChatPromptTemplate.from_template(template)
 chain = prompt_template | model
 
@@ -66,7 +63,7 @@ def fix_text(text):
 
 def fix_selection():
     # 1. copy to clipboard
-    with controller.pressed(Key.cmd):
+    with controller.pressed(Key.ctrl):
         controller.tap('c')
 
     # 2. get text from clipborad
@@ -81,16 +78,16 @@ def fix_selection():
     time.sleep(0.1)
 
     # 5. insert text
-    with controller.pressed(Key.cmd):
+    with controller.pressed(Key.ctrl):
         controller.tap('v')
 
 
 def fix_current_line():
-    controller.press(Key.cmd)
+    controller.press(Key.ctrl)
     controller.press(Key.shift)
     controller.press(Key.left)
 
-    controller.release(Key.cmd)
+    controller.release(Key.ctrl)
     controller.release(Key.shift)
     controller.release(Key.left)
 
@@ -103,6 +100,6 @@ def on_f10():
     fix_selection()
 
 with keyboard.GlobalHotKeys({
-        '<101>': on_f9,
-        '<109>': on_f10}) as h:
+        '<120>': on_f9,
+        '<121>': on_f10}) as h:
     h.join()

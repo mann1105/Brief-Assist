@@ -1,12 +1,11 @@
+import ctypes
 from pynput import keyboard
 from pynput.keyboard import Key, Controller
-
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import ChatPromptTemplate
 import tempfile
 from dotenv import load_dotenv
 from string import Template
-
 import os
 import pyperclip
 import time
@@ -16,7 +15,7 @@ load_dotenv()
 controller = Controller()
 model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 
-# Prompt Templates, Uncomment the one you want to. 
+# Prompt Templates, Uncomment the one you want to. However, 3rd one is my personal favourite.
 
 # 1. Concise Summary
 # template = """Text: {text}
@@ -35,6 +34,7 @@ model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 #     """
 
 # 3. Abstract Generation (Academic/Research)
+
 template = """Text: {text}
     
     Instructions:
@@ -50,30 +50,28 @@ def fix_text(text):
 
 def fix_selection():
     # 1. copy to clipboard
-    with controller.pressed(Key.cmd):
+    with controller.pressed(Key.ctrl):
         controller.tap('c')
 
-    # 2. get text from clipborad
+    # 2. get text from clipboard
     time.sleep(0.1)
     text = pyperclip.paste()
 
     # 3. process
     fixed_text = fix_text(text)
 
-    # 4. Shows response on screen
+    # 4. Shows response in a popup
     show_notification("Summarized Text", fixed_text)
 
 def show_notification(title, message, timeout=10):
-    with tempfile.NamedTemporaryFile(mode='w+t', suffix='.txt', delete=False) as temp_file:
-        temp_file.write(message)
-        os.system(f'open -a TextEdit {temp_file.name}')  
+    ctypes.windll.user32.MessageBoxW(0, message, title, 0)
 
 def fix_current_line():
-    controller.press(Key.cmd)
+    controller.press(Key.ctrl)
     controller.press(Key.shift)
     controller.press(Key.left)
 
-    controller.release(Key.cmd)
+    controller.release(Key.ctrl)
     controller.release(Key.shift)
     controller.release(Key.left)
 
@@ -86,6 +84,6 @@ def on_f10():
     fix_selection()
 
 with keyboard.GlobalHotKeys({
-        '<101>': on_f9,
-        '<109>': on_f10}) as h:
+        '<120>': on_f9,
+        '<121>': on_f10}) as h:
     h.join()
