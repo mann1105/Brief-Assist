@@ -42,7 +42,6 @@
   <li><code>pyperclip</code></li>
   <li><code>httpx</code></li>
   <li><code>langchain</code></li>
-  <li><code>langchain-community</code></li>
   <li><code>langchain_google_genai</code></li>
 </ul>
 
@@ -53,6 +52,7 @@
     <pre><code>git clone https://github.com/mann1105/Brief-Assist.git
 cd Brief-Assist</code></pre>
     <p>There are two folders namely local_assistant which requires inference from LLM locally and remote_assistant which uses api to make inference. Just an advice, use remote_assistant folder files to get faster responses as compared to local_assistant files</p>
+    <p>Using gemini-1.5-flash is most suitable for regular task because it is built to address developers’ top request for speed and affordability.</p>
   </li>
   <li>Create and activate a virtual environment:
     <pre><code>python -m venv venv
@@ -95,11 +95,7 @@ print(Key.f9.value, Key.f10.value)</code></pre>
 
 <h2 id="contributing">🤝 Contributing</h2>
 
-<p>Contributions are welcome! Please create a pull request or raise an issue for any bugs or feature requests.</p>
-
-<p>See <code>contributing.md</code> for ways to get started.</p>
-
-<p>Please adhere to this project's <code>code of conduct</code>.</p>
+<p>Contributions are welcome! Specifically, if you can make it usable for windows environment then please create a pull request.</p>
 
 <h2 id="contact">📫 Contact</h2>
 
