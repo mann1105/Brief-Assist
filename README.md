@@ -93,6 +93,9 @@ print(Key.f9.value, Key.f10.value)</code></pre>
 <p>You may need to modify the hotkey bindings depending on your system and keyboard layout.</p>
 <p>Specifically for MAC system with ventura or later version you need to first disable your default input of F9 and F10 keys. Follow this link to diable https://support.apple.com/en-in/102439</p>
 
+<h3>Inspired by</h3>
+<li>Andrej Karpathy's Twitter post about GPT's correcting minor typos. <a href="https://x.com/karpathy/status/1725553780878647482">Post</a></li>
+<li>Patrick Loeber's video about using httpx requests to call ollama api locally</li>
 <h2 id="contributing">🤝 Contributing</h2>
 
 <p>Contributions are welcome! Specifically, if you can make it usable for windows environment then please create a pull request.</p>
