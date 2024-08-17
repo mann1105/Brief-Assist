@@ -1,12 +1,9 @@
 from pynput import keyboard
 from pynput.keyboard import Key, Controller
-
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import ChatPromptTemplate
-
 from dotenv import load_dotenv
 from string import Template
-
 import pyperclip
 import time
 import httpx
@@ -37,7 +34,7 @@ def fix_text(text):
 
 def fix_selection():
     # 1. copy to clipboard
-    with controller.pressed(Key.cmd):
+    with controller.pressed(Key.ctrl):
         controller.tap('c')
 
     # 2. get text from clipborad
@@ -52,16 +49,16 @@ def fix_selection():
     time.sleep(0.1)
 
     # 5. insert text
-    with controller.pressed(Key.cmd):
+    with controller.pressed(Key.ctrl):
         controller.tap('v')
 
 
 def fix_current_line():
-    controller.press(Key.cmd)
+    controller.press(Key.ctrl)
     controller.press(Key.shift)
     controller.press(Key.left)
 
-    controller.release(Key.cmd)
+    controller.release(Key.ctrl)
     controller.release(Key.shift)
     controller.release(Key.left)
 
@@ -74,6 +71,6 @@ def on_f10():
     fix_selection()
 
 with keyboard.GlobalHotKeys({
-        '<101>': on_f9,
-        '<109>': on_f10}) as h:
+        '<120>': on_f9,
+        '<121>': on_f10}) as h:
     h.join()
