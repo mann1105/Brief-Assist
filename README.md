@@ -95,6 +95,7 @@ print(Key.f9.value, Key.f10.value)</code></pre>
 <h2 id="contributing">🤝 Contributing</h2>
 
 <p>Contributions are welcome! Please create a pull request or raise an issue for any bugs or feature requests.</p>
+<p>Windows users can use windows_develop branch.</p>
 
 <p>See <code>contributing.md</code> for ways to get started.</p>
 
