@@ -26,21 +26,21 @@ model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 #     """
 
 # 2.  Key Points Extraction(Best for summarizing news or long emails)
-# template = """Text: {text}
-    
-#     Instructions:
-#     1. Extract the key points and main arguments from the text above. Present them in a clear and structured list, highlighting the most important information.
-#     2. In Response you need to provide JUST corrected paragraph so that I can replace it directly.
-#     """
-
-# 3. Abstract Generation (Academic/Research)
-
 template = """Text: {text}
     
     Instructions:
-    1. Generate a concise abstract of the text above. Include the main research question, methodology, results, and conclusions. Follow standard academic conventions for abstract formatting.
+    1. Extract the key points and main arguments from the text above. Present them in a clear and structured list, highlighting the most important information.
     2. In Response you need to provide JUST corrected paragraph so that I can replace it directly.
     """
+
+# 3. Abstract Generation (Academic/Research)
+
+# template = """Text: {text}
+    
+#     Instructions:
+#     1. Generate a concise abstract of the text above. Include the main research question, methodology, results, and conclusions. Follow standard academic conventions for abstract formatting.
+#     2. In Response you need to provide JUST corrected paragraph so that I can replace it directly.
+#     """
 prompt_template = ChatPromptTemplate.from_template(template)
 chain = prompt_template | model
 
